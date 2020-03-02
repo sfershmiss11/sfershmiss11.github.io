@@ -1197,7 +1197,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2a83af;
+  background: #62a7fe;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2712,17 +2712,26 @@ ul.breadcrumb li + li:last-child {
   margin-bottom: -50px;
 }
 .gallery-item p {
-  margin: -25px auto -10px;
+  margin: 25px auto 10px;
   max-width: 50%;
   text-align: center;
   font-size: 15px;
-  color: #222;
+  color: #f9a972;
   background: rgba(255,255,255,0.3);
   border-radius: 7px;
-  border: 1px solid #222;
+  border: 1px solid #f9a972;
   box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
 }
 .posts-expand .post-body .gallery-column a img {
+  margin: 5px auto 0;
+  border-radius: 20px;
+  max-width: 90%;
+  opacity: 0.8;
+  box-shadow: 0px 8px 20px -10px #000;
+  transition: all 0.2s linear;
+  box-sizing: border-box;
+  padding: 3px;
+  border: 1px solid #f9a972;
   height: 250px;
   width: 300px;
   object-fit: cover;
