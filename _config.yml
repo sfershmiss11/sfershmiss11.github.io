@@ -131,9 +131,4 @@ douban:
   #  quote: ''
   timeout: 10000
 
-backup:
-    type: git
-    theme: next
-    repository:
-       github: https://github.com/sfershmiss11/sfershmiss11.github.io.git,hexo
 
