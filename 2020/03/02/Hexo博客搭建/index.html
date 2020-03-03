@@ -251,7 +251,28 @@
                 <time title="修改时间：2020-03-03 04:05:16" itemprop="dateModified" datetime="2020-03-03T04:05:16Z">2020-03-03</time>
               </span>
 
-          <br>
+          
+            <span id="/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo+Next博客搭建" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -333,10 +354,10 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\03\03\hexo加入自定义功能\" rel="bookmark">hexo加入自定义功能</a></div>
+      <div class="popular-posts-title"><a href="\2020\03\03\hexo-next主题美化\" rel="bookmark">hexo+next主题美化</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\03\03\hexo-next主题美化\" rel="bookmark">hexo+next主题美化</a></div>
+      <div class="popular-posts-title"><a href="\2020\03\03\hexo加入自定义功能\" rel="bookmark">hexo加入自定义功能</a></div>
     </li>
   </ul>
 
@@ -389,6 +410,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -564,6 +586,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'sfershmiss11',
+      appKey     : '99acmlpk01',
+      placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 <link rel="stylesheet" href="/dist/APlayer.min.css">
 <div id="aplayer"></div>
