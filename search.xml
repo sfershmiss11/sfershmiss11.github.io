@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo博客搭建</title>
+    <title>Hexo+Next博客搭建</title>
     <url>/2020/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>Hexo是一个快速，简单且功能强大的博客框架。您使用Markdown（或其他标记语言）编写帖子，然后Hexo会在几秒钟内生成带有精美主题的静态文件。</p>
+<a id="more"></a>
+<p>要求：</p>
+<ul>
+<li>node.js</li>
+<li>git</li>
+</ul>
+<p>1.登录github创建一个仓库，仓库名为：用户名.github.io<br><img src="https://img-blog.csdnimg.cn/20200302101003818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwNTkwNzc4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2.下载并安装Node.js。        网址: <a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a><br>3.打开git bash    ，输入命令：<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code><br>安装后输入cnpm -v可查看版本。<br>之后npm需改成cnpm。<br>4.输入命令安装hexo：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>5.创建一个文件夹blog：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
+
+<p>6.进入文件夹，初始化：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>7.打开根目录下的_config.yml文件，更改主题theme: landscape 改为 theme: next  ：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<p>同时修改文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/sfershmiss11/sfershmiss11.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>repository为仓库地址。<br>8.    安装工具后才可hexo d 到仓库 ，安装命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>9.下载next主题在themes文件夹下的next里，命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>10.创建新文章：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n 名字</span><br></pre></td></tr></table></figure>
+
+<p>11.然后打开hexo\source_posts下的.md文件加入文章内容。<br>文章内容要用Markdown编写。</p>
+<p>12.配置网站信息，打开根目录下_config.yml文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title:          <span class="comment"># 网站标题</span></span><br><span class="line">subtitle:       <span class="comment"># 网站副标题</span></span><br><span class="line">description:    <span class="comment"># 描述，介绍网站的</span></span><br><span class="line">keywords:       <span class="comment"># 网站的关键字</span></span><br><span class="line">author:         <span class="comment"># 博主姓名</span></span><br><span class="line">language: zh-CN <span class="comment"># 语言：zh-CN 是简体中文</span></span><br><span class="line">timezone: UTC   <span class="comment"># 时区</span></span><br></pre></td></tr></table></figure>
+<p>13.配置blog主页菜单，打开主题_config.yml文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 菜单设置为 菜单名: /菜单目录 || 菜单图标名字</span></span><br><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  sitemap: /sitemap.xml || sitemap</span><br><span class="line">  commonweal: /404/ || heartbeat</span><br><span class="line"></span><br><span class="line">menu_settings:</span><br><span class="line">  icons: <span class="literal">true</span>   <span class="comment"># 显示图标</span></span><br><span class="line">  badges: <span class="literal">true</span>  <span class="comment"># 显示统计信息</span></span><br></pre></td></tr></table></figure>
+<p>14.手动生成对应页面:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n page Name</span><br></pre></td></tr></table></figure>
+
+<p>创建新页面名：about    ，tags    ，categories<br>15.<strong>next.yml</strong><br>我们可以将所有主题配置放在一个位置（hexo/source/_data/next.yml）。这样就无需编辑主题配置文件（next/_config.yml）。<br>具体步骤：<br>在 hexo/source/_data 目录中创建 next.yml（如果_data 不存在，则创建目录）。<br>在 next.yml 设置 override 选项为 true。<br>将所有 NexT 主题选项从主题配置文件复制到 hexo/source/_data/next.yml 中。</p>
+<p>16.NexT 一共提供了 4 种首页样式，按照自己喜好选择一个，选择一个其他主题样式后其他的主题前一定要加上注释#：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
+<p>17.输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200302111946294.png" alt="在这里插入图片描述"><br>然后在浏览器输入网址：localhost:4000 预览博客页面，git bash中输入ctrl+c退出预览.</p>
+<p>18.设置完毕后输入命令上传到github仓库：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
