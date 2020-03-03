@@ -3,7 +3,9 @@
   <entry>
     <title>hexo加入自定义功能</title>
     <url>/2020/03/03/hexo%E5%8A%A0%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<h2 id="Hexo-加入豆瓣读书页面"><a href="#Hexo-加入豆瓣读书页面" class="headerlink" title="Hexo 加入豆瓣读书页面"></a>Hexo 加入豆瓣读书页面</h2><p>在 Hexo 博客个性化定制中，加入豆瓣读书界面是一个很不错的功能。GitHub 上已经有人写好了这个模块：hexo-douban，我们只需要安装模块，然后配置一下就可以了。</p>
+    <content><![CDATA[<p>给博客加入豆瓣读书、电影，音乐播放器功能。</p>
+<a id="more"></a>
+<h2 id="Hexo-加入豆瓣读书页面"><a href="#Hexo-加入豆瓣读书页面" class="headerlink" title="Hexo 加入豆瓣读书页面"></a>Hexo 加入豆瓣读书页面</h2><p>在 Hexo 博客个性化定制中，加入豆瓣读书界面是一个很不错的功能。GitHub 上已经有人写好了这个模块：hexo-douban，我们只需要安装模块，然后配置一下就可以了。</p>
 <p><strong>安装</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-douban --save</span><br></pre></td></tr></table></figure>
 
@@ -59,7 +61,9 @@
   <entry>
     <title>hexo+next主题美化</title>
     <url>/2020/03/03/hexo-next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/</url>
-    <content><![CDATA[<h2 id="一、站点配置"><a href="#一、站点配置" class="headerlink" title="一、站点配置"></a>一、站点配置</h2><p>1、设置 hexo 的 next 主题<br>我们在站点的配置文件_config.yml 中找到 theme 后添加：</p>
+    <content><![CDATA[<p>美化next主题，添加一些个性化内容。</p>
+<a id="more"></a>
+<h2 id="一、站点配置"><a href="#一、站点配置" class="headerlink" title="一、站点配置"></a>一、站点配置</h2><p>1、设置 hexo 的 next 主题<br>我们在站点的配置文件_config.yml 中找到 theme 后添加：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: next  <span class="comment"># 配置成刚下载的next主题</span></span><br></pre></td></tr></table></figure>
 
 <p>2、配置 hexo 网站相关信息<br>我们在站点的配置文件_config.yml 中，修改：</p>
@@ -142,7 +146,7 @@
 <p>友链配置：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Blog rolls</span></span><br><span class="line">links_icon: link          <span class="comment"># 友链的图标 参考上文</span></span><br><span class="line">links_title: Links        <span class="comment"># 友链的title  比如你可以更改为 友情链接</span></span><br><span class="line">links_layout: block       <span class="comment"># 友链摆放的样式：按块（一行一个）</span></span><br><span class="line"><span class="comment">#links_layout: inline     # 友链摆放的样式：按线摆放（一行很多个），注意，同时只能一种样式</span></span><br><span class="line">links:</span><br><span class="line">  Title: http://example.com/  <span class="comment"># 友链的地址</span></span><br></pre></td></tr></table></figure>
 
-<p>9、首页文章不展示全文显示摘要<br>通过在文章中加入 <a id="more"></a> 来控制 Read More 摘要内容。</p>
+<p>9、首页文章不展示全文显示摘要<br>通过在文章中加入 <!-- more --> 来控制 Read More 摘要内容。</p>
 <p>10、首页文章属性</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">post_meta:</span><br><span class="line">  item_text: <span class="literal">false</span>    <span class="comment"># 设为true 可以一行显示，文章的所有属性</span></span><br><span class="line">  created_at: <span class="literal">true</span>    <span class="comment"># 显示创建时间</span></span><br><span class="line">  updated_at:</span><br><span class="line">    enabled: <span class="literal">true</span>     <span class="comment"># 显示修改的时间</span></span><br><span class="line">    another_day: <span class="literal">true</span> <span class="comment"># 设true时，如果创建时间和修改时间一样则显示一个时间</span></span><br><span class="line">  categories: <span class="literal">true</span>    <span class="comment"># 显示分类信息</span></span><br></pre></td></tr></table></figure>
 
