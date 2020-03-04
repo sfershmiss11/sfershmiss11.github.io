@@ -99,7 +99,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/sfershmiss11/sfershmiss11.github.io.git
+
+  repository: git@116.62.103.41:/home/git/hexo.git
+              #github: git@github.com:sfershmiss11/sfershmiss11.github.io.git
   branch: master
 
 	# 本地搜索

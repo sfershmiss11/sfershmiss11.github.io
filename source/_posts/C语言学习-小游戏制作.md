@@ -1,6 +1,8 @@
 ---
 title: C语言学习-小游戏制作
+date: 2020-03-03 12:05:54
 tags: [C]
+categories: [C]
 comments: true
 ---
 
