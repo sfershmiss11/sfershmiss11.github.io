@@ -28,7 +28,7 @@ custom_file_path:
   #postMeta: source/_data/post-meta.swig
   #postBodyEnd: source/_data/post-body-end.swig
   #footer: source/_data/footer.swig
-  #bodyEnd: source/_data/body-end.swig
+  bodyEnd: source/_data/body-end.swig
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
   style: source/_data/styles.styl
@@ -632,15 +632,15 @@ changyan:
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
   enable: true
-  appid: sfershmiss11@163.com # Your leancloud application appid
-  appkey: 99Acmlpk01 # Your leancloud application appkey
+  appid: 6WbdlJjyN3emY3Iv5nqKA3yI-gzGzoHsz # Your leancloud application appid
+  appkey: g6etLGtzQdHb9hjFAybyJh7k # Your leancloud application appkey
   notify: false # Mail notifier
   verify: false # Verification code
   placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' # Comment box placeholder
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
-  language: zh-cn # Language, available values: en, zh-cn
+  language: en # Language, available values: en, zh-cn
   visitor: true # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
@@ -1022,3 +1022,12 @@ css: css
 js: js
 images: images
 
+# 鼠标点击特效
+# mouse click effect: fireworks | explosion | love | text
+cursor_effect: fireworks
+
+# 打字特效
+# typing effect
+typing_effect:
+  colorful: true  # 礼花特效
+  shake: false    # 震动特效
