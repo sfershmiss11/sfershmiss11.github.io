@@ -5,18 +5,18 @@ tags: [hexo]
 categories: [hexo,next]
 comments: true
 ---
-美化next主题，添加一些个性化内容。
+美化next主题，添加一些个性化内容。添加分类、标签、about、404页面，本地搜索，字数统计、阅读时长，背景图片等功能。
 <!--more-->
 ## 一、站点配置
 
-1、设置 hexo 的 next 主题
+### 1、设置 hexo 的 next 主题
 我们在站点的配置文件_config.yml 中找到 theme 后添加：
 
 ```bash
 theme: next  # 配置成刚下载的next主题
 ```
 
-2、配置 hexo 网站相关信息
+### 2、配置 hexo 网站相关信息
 我们在站点的配置文件_config.yml 中，修改：
 
 
@@ -33,7 +33,7 @@ timezone: UTC   # 时区
 
 注意：博客框架默认的语言是英文，我们需要到 /themes/next/languages 目录下，查看当前 NexT 版本简体中文对照文件的名称是 zh-Hans 还是 zh-CN。这里是 zh-CN。
 
-3、设置 hexo 永久链接
+### 3、设置 hexo 永久链接
 我们在站点的配置文件_config.yml 中，修改：
 
 ```bash
@@ -48,7 +48,7 @@ permalink_defaults:
 
 注：这个文章永久链接设置需要安装插件，详细安装配置过程见：本博客当前使用的插件总结中的 Hexo 文章永久链接插件。
 
-4、nofollow 标签的使用
+### 4、nofollow 标签的使用
 减少出站链接能够有效防止权重分散，hexo 有很方便的自动为出站链接添加 nofollow 标签的插件。
 
 首先安装 hexo-filter-nofollow 插件：
@@ -59,7 +59,7 @@ npm install hexo-filter-nofollow --save
 
 然后我们在站点的配置文件_config.yml 中添加配置，将 nofollow 设置为 true：
 
-# 外部链接优化
+####  外部链接优化
 
 ```bash
 nofollow:
@@ -74,7 +74,7 @@ nofollow:
 
 ## 二、主题配置
 
-1、配置 hexo 中的 about、tag、categories、sitemap 菜单
+### 1、配置 hexo 中的 about、tag、categories、sitemap 菜单
 默认的主题配置文件_config.yml 中，菜单只开启了首页和归档，我们根据需要，可以添加 about、tag、categories、sitemap 等菜单，所以把它们也取消注释。
 
 
@@ -97,7 +97,7 @@ menu_settings:
 
 注：hexo 所有图标均来自 fontawesome，其中 || 后面是你想要设置的图标的名字。
 
-2、手动生成 hexo 菜单对应文件
+### 2、手动生成 hexo 菜单对应文件
 新菜单开启后是没有对应文件的，所以要手动生成 about、tags、categories、404 页面。
 
 新建 about 页面
@@ -188,7 +188,7 @@ comments: false
 
 注意：本地测试不出来，发布出来就可以了。
 
-3、配置 hexo 本地搜索
+### 3、配置 hexo 本地搜索
 本地搜索的原理
 对于动态网站来说，可以通过 php 实现。但是，Hexo 博客是静态网站，用不了 php。
 
@@ -235,7 +235,7 @@ local_search:
   preload: false
 ```
 
-4、设置 hexo 中的 rss 订阅
+### 4、设置 hexo 中的 rss 订阅
 安装插件：
 
 ```bash
@@ -259,7 +259,7 @@ feed:
   template:
 ```
 
-5、配置 hexo 站点的 footer 信息
+### 5、配置 hexo 站点的 footer 信息
 底部 footer 可以开关显示 hexo 信息、theme 信息、建站时间等个性化配置：
 
 ```bash
@@ -278,7 +278,7 @@ footer:
   custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a> # 这里的底部标识是为了添加coding page服务时的版权声明 打开注释就可以看到底部有一个 hosted by coding pages
 ```
 
-6、配置 hexo 中 next 主题样式选择
+### 6、配置 hexo 中 next 主题样式选择
 NexT 一共提供了 4 种首页样式，按照自己喜好选择一个，选择一个其他主题样式后其他的主题前一定要加上注释#：
 
 
@@ -290,7 +290,7 @@ NexT 一共提供了 4 种首页样式，按照自己喜好选择一个，选择
 scheme: Gemini
 ```
 
-7、头像信息设置
+### 7、头像信息设置
 
 ```bash
 avatar:
@@ -300,7 +300,7 @@ avatar:
   rotated: false           # 不开启旋转
 ```
 
-8、社交信息和友链配置
+### 8、社交信息和友链配置
 这里和菜单设置格式一样，社交名字: 社交url || 社交图标，图标信息来自 fontawesome：
 
 ```bash
@@ -329,10 +329,10 @@ links:
   Title: http://example.com/  # 友链的地址
 ```
 
-9、首页文章不展示全文显示摘要
+### 9、首页文章不展示全文显示摘要
 通过在文章中加入 <!-- more --> 来控制 Read More 摘要内容。
 
-10、首页文章属性
+### 10、首页文章属性
 
 ```bash
 post_meta:
@@ -344,7 +344,7 @@ post_meta:
   categories: true    # 显示分类信息
 ```
 
-11、页面阅读统计
+### 11、页面阅读统计
 
 ```bash
 busuanzi_count:
@@ -357,7 +357,7 @@ busuanzi_count:
   post_views_icon: eye       # 内容页阅读数的图标
 ```
 
-12、字数统计、阅读时长
+### 12、字数统计、阅读时长
 首先安装插件：
 
 ```bash
@@ -386,7 +386,7 @@ symbols_count_time:
   total_time: true
 ```
 
-13、内容页里的代码块新增复制按钮
+### 13、内容页里的代码块新增复制按钮
 
 ```bash
 codeblock:
@@ -395,7 +395,7 @@ codeblock:
     show_result: false # 点击复制完后是否显示 复制成功 结果提示
 ```
 
-14、配置微信，支付宝打赏
+### 14、配置微信，支付宝打赏
 
 ```bash
 # Reward
@@ -405,7 +405,7 @@ alipay: /images/alipay.png        # 支付宝的地址
 #bitcoin: /images/bitcoin.png     # 比特币地址
 ```
 
-15、相关文章推荐
+### 15、相关文章推荐
 安装推荐文章的插件：
 
 ```bash
@@ -427,7 +427,7 @@ related_posts:
     isExcerpt: false     # 是否显示摘要
 ```
 
-16、文章原创申明
+### 16、文章原创申明
 
 ```bash
 creative_commons:
@@ -437,7 +437,7 @@ creative_commons:
   language:
 ```
 
-17、背景动画设置
+### 17、背景动画设置
 Canvas-nest 风格
 进入 theme/next 目录，执行命令：
 
@@ -449,7 +449,7 @@ git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas
 
 这时将配置文件_config.yml 中的 canvas_nest: false 改为 canvas_nest: true 才能真正生效。
 
-18、添加 Google 统计
+### 18、添加 Google 统计
 访问 Google Analytics，按照提示填写网站信息开通 GA 服务，获取统计 ID。
 
 然后编辑主题配置文件_config.yml，找到关键字 google_analytics，删除注释#并填写获取到的统计 ID：
@@ -460,7 +460,7 @@ google_analytics:
   localhost_ignored: true
 ```
 
-19、Google Search Console
+### 19、Google Search Console
 该版本已经集成了 HTML 标记的验证方式。
 
 查看原标记，将其中 content 字段引号内的内容拷贝出来
@@ -471,7 +471,7 @@ google_analytics:
 # See: https://www.google.com/webmasters/
 google_site_verification: uW8bwgMGUwIA01nPfItoty1rmtmmuVkOVTeS9O0nAUg
 ```
-20.添加背景图片
+### 20.添加背景图片
 设置背景图片
 将想要的背景图片放入 themes/next/source/images。打开 themes/next/source/css/ _custom/custom.styl 文件，这个是 Next 故意留给用户自己个性化定制一些样式的文件，添加以下代码即可：
 

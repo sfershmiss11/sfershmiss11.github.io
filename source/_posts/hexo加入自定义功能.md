@@ -11,13 +11,13 @@ comments: true
 ## Hexo 加入豆瓣读书页面
 在 Hexo 博客个性化定制中，加入豆瓣读书界面是一个很不错的功能。GitHub 上已经有人写好了这个模块：hexo-douban，我们只需要安装模块，然后配置一下就可以了。
 
-**安装**
+### **安装**
 
 ```bash
 npm install hexo-douban --save
 ```
 
-**配置**
+### **配置**
 将下面的配置写入站点的配置文件_config.yml 里
 
 ```bash
@@ -43,7 +43,7 @@ quote: 写在页面开头的一段话，支持 html 语法。
 timeout: 爬取数据的超时时间，默认是 10000ms , 如果在使用时发现报了超时的错 (ETIMEOUT) 可以把这个数据设置的大一点。
 如果只想显示某一个页面 (比如 movie)，那就把其他的配置项注释掉即可。
 
-**启动**
+### **启动**
 我们只需要在 Git Bash 中输入以下命令：hexo clean && hexo douban -bgm && hexo g && hexo s 即可，注意其中开启 hexo-douban 的命令中，-bgm 代表的是 book、game、movie 三个参数，如果只需要其中的一部分就只带你想要的那些参数。
 
 **注意**：由于 hexo douban 的简写也是 hexo d，与 hexo deploy 的简写指令 hexo d 冲突，因此在进行二者部署的时候，只能都打全名而不能打简写形式。
@@ -54,10 +54,10 @@ timeout: 爬取数据的超时时间，默认是 10000ms , 如果在使用时发
    true，那么除了可以使用 hexo douban 命令之外，hexo g 或 hexo s 也内嵌了生成页面的功能。因此，还是按照
    hexo clean && hexo g && hexo s 就可以。
 
-**测试**
+### **测试**
 上面都没问题之后，我们只需要在站点目录下测试 http://localhost:4000/books 或者 http://localhost:4000/movies 等，如果看到页面了就说明成功了。
 
-**部署**
+### **部署**
 如果上述都没有问题，我们就可以在菜单栏中添加按钮了，打开主题配置文件_config.yml，找到菜单按钮，添加下面内容：
 
 ```bash
@@ -81,14 +81,14 @@ menu:
 　　* 本节内容是基于实现本地保存图片功能前提记录的笔记，如果是用图床外链，可以跳过所有涉及到img文件夹以及img/s文件夹的步骤。
 　　* 本相册的所有功能均仅测试了在hexo-theme-next下实现的效果，使用其它主题时部分布局尺寸数据可能会出现偏差，需要自行根据主题设置修改。
 
-▶ 创建目录
+###  创建目录
 在 git bash 中输入命令hexo new page gallery；
 在hexo/sourse/gallery目录下建立你需要的分类相册文件夹；
 进入hexo/sourse/gallery目录，新建img文件夹用来存放相册封面；
 在每个相册文件夹中创建img文件夹用来存放大图，以及img/s文件夹用来存放缩略图。
 Ps. img/s文件夹可以省略不建，用文件名-s.jpg的格式重命名缩略图即可。
 
-▶ 图片处理
+### 图片处理
 原图处理：
 将需要上传的图片放入gallery/相册名/img文件夹中，为了加载速度建议压缩至 1mb 以下，使用 jpg 格式保存；
 除了文件大小以外没有其它要求，但是为了方便后续页面编辑，建议将文件以容易辨识的方式重命名，例如日期-图片名.jpg。
@@ -98,7 +98,7 @@ Ps. img/s文件夹可以省略不建，用文件名-s.jpg的格式重命名缩�
 封面图处理
 从每个相册的缩略图中挑选需要的封面，复制到gallery/img文件夹中；
 建议重命名为相册名.jpg。
-相册主界面
+### 相册主界面
 打开gallery/index.md，将title设置成你需要的相册页面名称；
 （可选）在日期下方加上comments: false关闭评论；
 复制以下代码粘贴至正文，并按需求修改相册描述、相册名、相册文件夹名以及封面图文件名：
@@ -140,11 +140,11 @@ Ps. img/s文件夹可以省略不建，用文件名-s.jpg的格式重命名缩�
 <center>自定义分割线【此行可删除】</center>
 ```
 
-Ps. 1. 需要使用外链的场合，将<img src="img/【封面图文件名】.jpg">中的内容替换为图床外链地址即可；
+Ps. 1. 需要使用外链的场合，将< img src="img/【封面图文件名】.jpg">中的内容替换为图床外链地址即可；
 Ps. 2. 代码中<div class="gallery-column">元素为分列显示相册的列数，可按需要增减；
 Ps. 3. 新增相册时请确认代码添加在<div class="gallery-column">元素内部，否则会造成显示错误。
 
-分类相册界面
+### 分类相册界面
 打开gallery/相册名/index.md，将title设置成你需要的相册页面名称；
 （可选）在日期下方加上comments: false关闭评论；
 复制以下代码粘贴至正文，并按需求修改相册描述、图片名以及缩略图文件名：
@@ -168,11 +168,11 @@ Ps. 3. 新增相册时请确认代码添加在<div class="gallery-column">元素
 <center>自定义分割线【此行可删除】</center>
 ```
 
-Ps. 1. 需要使用外链的场合，将<img src="img/【图片名】.jpg">中的内容替换为图床外链地址即可，如果图床加载速度够快可以用同一个链接填充缩略图部分；
-Ps. 2. 代码中<div class="img-column">元素为分列显示图片的列数，可按需要增减；
-Ps. 3. 添加图片时请确认代码添加在<div class="img-column">元素内部，否则会造成显示错误。
+Ps. 1. 需要使用外链的场合，将< img src="img/【图片名】.jpg">中的内容替换为图床外链地址即可，如果图床加载速度够快可以用同一个链接填充缩略图部分；
+Ps. 2. 代码中< div class="img-column">元素为分列显示图片的列数，可按需要增减；
+Ps. 3. 添加图片时请确认代码添加在< div class="img-column">元素内部，否则会造成显示错误。
 
-CSS 样式
+### CSS 样式
 在custom.styl中加入如下代码：
 
 ```bash
@@ -244,11 +244,11 @@ custom_file_path:
 ```
 
 ## 加入音乐播放器
-**下载**
+### **下载**
 首先，先下载Aplayer源码：APlayer
-**dist文件夹**
+### **dist文件夹**
 再将文件中的dist文件夹复制到路径：blog/themes/next/source（我的next版本是7.5）
-**新建music.js**
+### **新建music.js**
 在目录blog/themes/next/source/dist下添加music.js文件
 内容是：
 
@@ -299,11 +299,13 @@ artist：作者
 url：连接（具体怎样操作看下面步骤）
 cover：是图片连接，可以是本地图片，也可以是在线图片，本地放在source/images然后修改路径即可
 
-**url添加歌曲方法**
+播放器在跳转页面时音乐会重新播放，建议把autoplay设置为false。
+
+### **url添加歌曲方法**
 网易云网页播放一首歌曲
 将网址中的id复制例：https://music.163.com/#/song?id=1411358329
 将下面代码中的id修改为你想添加歌曲的id：http://music.163.com/song/media/outer/url?id=.mp3
-**修改文件_layout.swig**
+### **修改文件_layout.swig**
 在路径：blog/themes/next/layout下找到_layout.swig文件，然后将下面的代码添加到：<body itemscope ...>在body里面就可以
 
 ```bash
@@ -317,5 +319,7 @@ cover：是图片连接，可以是本地图片，也可以是在线图片，本
 
 参考文章：
 [css+markdown 实现 hexo 相册【进阶篇】](https://co5.me/2018/181112-gallerry2.html)
+
 [在Hexo博客中加入豆瓣读书页面](https://bestzuo.cn/posts/hexo-douban.html)
+
 [Hexo next主题中添加播放器Aplayer](https://blog.csdn.net/qq_35324057/article/details/104124723)
