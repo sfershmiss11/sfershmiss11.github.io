@@ -152,3 +152,8 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+  lazyload:
+  enable: true
+  onlypost: false
+  loadingImg: /images/14.png
