@@ -57,11 +57,9 @@ struct TreeNode {
  
 ~~~
 #### 思路
-**
 
 递归：
 
-**
 
 - 当两棵树均为NULL时，可能已经递归完，也可能均为空，此时返回true
 - 当其中一颗tree为NULL时，返回false
@@ -69,23 +67,20 @@ struct TreeNode {
 
 
 #### 过程
-**
+
 
 C语言
 
-**
 ~~~c
 bool isSameTree(struct TreeNode* p, struct TreeNode* q){
     if(p==NULL&&q==NULL){
         return true;
-    }else if(p!=NULL&&q==NULL){
-        return false;
-    }else if(p==NULL&&q!=NULL){
-        return false;
-    }else if(p->val==q->val){
+    }
+	if(p==NULL||q==NULL){
+		return false;
+	}
+    if(p->val==q->val){
         return isSameTree(p->left,q->left)&&isSameTree(p->right,q->right);
-    }else{
-        return false;
     }
 
 }
@@ -116,20 +111,19 @@ bool isSameTree(struct TreeNode* p, struct TreeNode* q){
 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。
 
 #### 思路
-**
+
 
 递归： 
 
-**
 - 树为空则对称
 - 值相等且有左右子树
 - 左子树等于右子树
 #### 过程
-**
+
 
 C语言
 
-**
+
 ~~~c
 bool next(struct TreeNode* root_L,struct TreeNode* root_R){
     if(!root_L&&!root_R){
@@ -170,21 +164,21 @@ bool isSymmetric(struct TreeNode* root){
 ~~~
 返回它的最大深度 3 。
 #### 思路
-**
+
 
 递归：
 
-**
+
 - 树为空时，停止
 - 树某个子树为空时，不进入递归
 - 高度逐层增加，返回最大的一个
 
 #### 过程
-**
+
 
 C语言
 
-**
+
 ~~~c
 int maxDepth(struct TreeNode* root){
     if(root==NULL)  return 0;
